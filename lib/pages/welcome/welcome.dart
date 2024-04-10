@@ -10,12 +10,11 @@ class Welcome extends StatelessWidget {
       body: Stack(
         children: [
           PageView(
+            scrollDirection: Axis.horizontal,
             children: [
-              Container(
-                width: 345,
-                height: 345,
-                child: Image.asset(""),
-              )
+              Image.asset("assets/images/happy.png"),
+              Image.asset("assets/images/run.png"),
+              Image.asset("assets/images/tongue-out.png"),
             ],
           )
         ],
