@@ -17,8 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: theme.colorScheme.copyWith(background: Color.fromRGBO(242, 203, 77, 1)),
         useMaterial3: true,
-          textTheme: TextTheme(
-          bodyMedium: const TextStyle(
+          textTheme: const TextTheme(
+          bodyMedium: TextStyle(
           fontFamily: 'OdinRounded', // Use your custom font here
            ),
         ),
