@@ -21,6 +21,6 @@ Flutter App created to help students of all ages. Produced for fun.
 
 # Contributors
 
-<a href="https://github.com/GerardoBrescia/JustTraditions/graphs/contributors">
+<a>
   <img src="https://contrib.rocks/image?repo=MichelaFaella/MindMate" />
 </a>
