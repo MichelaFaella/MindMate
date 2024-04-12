@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MindMate',
       theme: ThemeData(
-        colorScheme: theme.colorScheme.copyWith(background: Color.fromRGBO(242, 203, 77, 1)),
+        colorScheme: theme.colorScheme.copyWith(background: Color.fromRGBO(159, 64, 255, 1)),
         useMaterial3: true,
           textTheme: const TextTheme(
           bodyMedium: TextStyle(
