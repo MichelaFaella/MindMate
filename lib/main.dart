@@ -16,12 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MindMate',
       theme: ThemeData(
-        colorScheme: theme.colorScheme.copyWith(background: ColorsNew.purpleNew),
+        colorScheme: theme.colorScheme
+            .copyWith(background: colorsNew.backgroundColorNew),
         useMaterial3: true,
-          textTheme: const TextTheme(
+        textTheme: const TextTheme(
           bodyMedium: TextStyle(
-          fontFamily: 'OdinRounded', // Use your custom font here
-           ),
+            fontFamily: 'OdinRounded', // Use your custom font here
+          ),
         ),
       ),
       home: const Welcome(),
@@ -31,7 +32,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
 
   final String title;
 
