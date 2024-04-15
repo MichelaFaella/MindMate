@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/welcome/welcome.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MindMate',
       theme: ThemeData(
-        colorScheme: theme.colorScheme.copyWith(background: Color.fromRGBO(159, 64, 255, 1)),
+        colorScheme: theme.colorScheme.copyWith(background: ColorsNew.purpleNew),
         useMaterial3: true,
           textTheme: const TextTheme(
           bodyMedium: TextStyle(

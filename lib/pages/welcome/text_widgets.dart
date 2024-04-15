@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mind_mate/pages/utilities/colorsNew.dart';
 
 Widget text24Normal({String text = ""}){
   return Text(
@@ -7,7 +8,7 @@ Widget text24Normal({String text = ""}){
     style: const TextStyle(
         letterSpacing: 1.1,
         fontSize: 24,
-        color: Color.fromRGBO(159, 64, 255, 1),
+        color: ColorsNew.purpleNew,
         fontWeight: FontWeight.w600,
       ),
   );
