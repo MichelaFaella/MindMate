@@ -1,6 +1,3 @@
-import 'dart:js';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mind_mate/pages/welcome/text_widgets.dart';
 
