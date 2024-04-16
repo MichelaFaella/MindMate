@@ -32,7 +32,7 @@ Widget text20Normal({String text = ""}){
 Widget text22Buttons({String text = ""}){
   return Center(
       child: Text(
-        text,
+        text.toUpperCase(),
         textAlign: TextAlign.center,
         style: const TextStyle(
           fontSize: 22,

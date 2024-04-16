@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const Welcome(),
+      home: Welcome(),
     );
   }
 }
