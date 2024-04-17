@@ -1,14 +1,16 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:mind_mate/pages/authentication/sign_in.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/decorations.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
 
-Widget appOnBoardingPage(PageController controller,
+Widget appOnBoardingPage(PageController controller, BuildContext context,
     {String imagePath = "",
     String title = "",
     String subTitle = "",
-    int index = 0}) {
+    int index = 0,
+    String buttonText = ""}) {
   return Column(
     children: [
       Image.asset(
@@ -32,12 +34,13 @@ Widget appOnBoardingPage(PageController controller,
                   child: text20Normal(text: subTitle))
             ],
           )),
-      nextButton(index, controller),
+      nextButton(index, controller, buttonText, context),
     ],
   );
 }
 
-Widget nextButton(int index, PageController controller) {
+Widget nextButton(
+    int index, PageController controller, String text, BuildContext context) {
   return GestureDetector(
     onTap: () {
       print("My index is $index");
@@ -47,6 +50,13 @@ Widget nextButton(int index, PageController controller) {
           duration: const Duration(milliseconds: 200),
           curve: Curves.linear,
         );
+      } else {
+        Navigator.push(
+          context,
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) => const SignIn(),
+          ),
+        );
       }
     },
     child: Container(
@@ -54,7 +64,7 @@ Widget nextButton(int index, PageController controller) {
       height: 70,
       margin: const EdgeInsets.only(top: 25),
       decoration: buttonDecorations(),
-      child: text22Buttons(text: "Avanti"),
+      child: text22Buttons(text: text),
     ),
   );
 }
