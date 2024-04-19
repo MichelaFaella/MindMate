@@ -1,6 +1,6 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:mind_mate/pages/authentication/sign_in.dart';
+import 'package:mind_mate/pages/authentication/signIn.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/decorations.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
@@ -51,11 +51,9 @@ Widget nextButton(
           curve: Curves.linear,
         );
       } else {
-        Navigator.push(
+        Navigator.pushNamed(
           context,
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => const SignIn(),
-          ),
+          "/signIn",
         );
       }
     },
@@ -64,22 +62,9 @@ Widget nextButton(
       height: 70,
       margin: const EdgeInsets.only(top: 25),
       decoration: buttonDecorations(),
-      child: text22Buttons(text: text),
+      child: text22WhiteButtons(text: text),
     ),
   );
 }
 
-Widget nextDot(int index) {
-  return DotsIndicator(
-    position: index,
-    dotsCount: 3,
-    mainAxisAlignment: MainAxisAlignment.center,
-    decorator: DotsDecorator(
-        size: const Size.square(9.0),
-        activeSize: const Size(18.0, 8.0),
-        activeColor: colorsNew.purpleNew,
-        activeShape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(5.0),
-        )),
-  );
-}
+

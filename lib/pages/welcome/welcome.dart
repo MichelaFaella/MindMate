@@ -4,7 +4,7 @@ import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/welcome/welcomeWidgets.dart';
 
 class Welcome extends StatefulWidget {
-  Welcome({super.key});
+  const Welcome({super.key});
 
   @override
   State<Welcome> createState() => _WelcomeState();
@@ -21,6 +21,7 @@ class _WelcomeState extends State<Welcome> {
       color: colorsNew.backgroundColorNew,
       child: SafeArea(
           child: Scaffold(
+            resizeToAvoidBottomInset: false,
         body: Stack(
           alignment: Alignment.topCenter,
           children: [
