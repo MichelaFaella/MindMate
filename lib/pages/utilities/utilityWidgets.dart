@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mind_mate/pages/authentication/authenticationWidget.dart';
-import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/decorations.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
 
@@ -28,7 +26,8 @@ Widget appButtonOne({String text = ""}) {
           decoration: buttonFormDecorationsOne(),
           child: text22WhiteButtons(text: text),
         ),
-      ));
+      ),
+  );
 }
 
 Widget appButtonTwo({
