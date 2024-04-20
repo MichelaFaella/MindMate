@@ -1,7 +1,4 @@
-import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:mind_mate/pages/authentication/signIn.dart';
-import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/decorations.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
 
@@ -18,7 +15,7 @@ Widget appOnBoardingPage(PageController controller, BuildContext context,
         fit: BoxFit.fitWidth,
       ),
       Container(
-          margin: EdgeInsets.only(top: 15),
+          margin: const EdgeInsets.only(top: 15),
           decoration: cardDecorations(),
           width: 319,
           height: 270,
