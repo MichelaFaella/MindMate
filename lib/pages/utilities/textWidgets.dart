@@ -47,7 +47,7 @@ Widget text16Normal({String text = ""}){
 Widget text15Normal({String text = ""}){
   return Text(
     text,
-    textAlign: TextAlign.center,
+    textAlign: TextAlign.start,
     style: const TextStyle(
       fontSize: 15,
       color: colorsNew.textColorNew,

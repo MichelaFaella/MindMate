@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mind_mate/pages/authentication/signIn.dart';
+import 'package:mind_mate/pages/authentication/signUp.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/welcome/welcome.dart';
 
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
       home: Welcome(),
       routes: {
         "/signIn": (context) => const SignIn(),
+        "/signUp": (context) => const SignUp(),
       },
 
     );
