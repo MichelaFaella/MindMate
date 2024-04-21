@@ -20,7 +20,10 @@ class SignIn extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: appIcon(imagePath: "assets/images/Logo3.png", width: 180, height: 180),
+                  child: appIcon(
+                      imagePath: "assets/images/Logo3.png",
+                      width: 180,
+                      height: 180),
                 ),
                 socialLogIn(),
                 text14Description(
@@ -47,8 +50,8 @@ class SignIn extends StatelessWidget {
                 const SizedBox(height: 50),
                 appButtonOne(text: "Accedi"),
                 const SizedBox(height: 20),
-                appButtonTwo(text: "Registrati", context: context, pageName: "/signUp"),
-
+                appButtonTwo(
+                    text: "Registrati", context: context, pageName: "/signUp"),
               ],
             ),
           ),

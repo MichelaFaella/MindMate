@@ -21,7 +21,7 @@ class _WelcomeState extends State<Welcome> {
       color: colorsNew.backgroundColorNew,
       child: SafeArea(
           child: Scaffold(
-            resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         body: Stack(
           alignment: Alignment.topCenter,
           children: [

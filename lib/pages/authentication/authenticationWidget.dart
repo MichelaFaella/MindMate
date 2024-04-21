@@ -36,7 +36,10 @@ Widget _loginButton({
 }
 
 Widget appTextField(
-    {String text = "", String iconName = "", String hintText = "", bool obscureText = false}) {
+    {String text = "",
+    String iconName = "",
+    String hintText = "",
+    bool obscureText = false}) {
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 40),
     child: Column(

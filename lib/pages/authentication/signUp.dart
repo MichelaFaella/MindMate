@@ -20,10 +20,12 @@ class SignUp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: appIcon(imagePath: "assets/images/Logo3.png", width: 180, height: 180),
+                  child: appIcon(
+                      imagePath: "assets/images/Logo3.png",
+                      width: 180,
+                      height: 180),
                 ),
-                text14Description(
-                    text: "Inserisci i tuoi dati qui"),
+                text14Description(text: "Inserisci i tuoi dati qui"),
                 const SizedBox(height: 20),
                 //nome textbox
                 appTextField(
@@ -37,7 +39,6 @@ class SignUp extends StatelessWidget {
                     iconName: "assets/icons/user.png",
                     hintText: "Inserisci la tua email"),
                 const SizedBox(height: 20),
-
 
                 //password textbox
                 appTextField(
@@ -57,11 +58,11 @@ class SignUp extends StatelessWidget {
                 const SizedBox(height: 20),
                 Container(
                   margin: const EdgeInsets.only(left: 25),
-                  child: text15Normal(text: "Devi accettare i nostri termini e condizioni."),
+                  child: text15Normal(
+                      text: "Devi accettare i nostri termini e condizioni."),
                 ),
                 const SizedBox(height: 80),
                 appButtonOne(text: "Registrati"),
-
               ],
             ),
           ),

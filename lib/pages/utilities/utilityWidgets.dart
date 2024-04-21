@@ -16,17 +16,17 @@ Widget appIcon({
 
 Widget appButtonOne({String text = ""}) {
   return GestureDetector(
-      onTap: () {
-        print("hello");
-      },
-      child: Center(
-        child: Container(
-          width: 325,
-          height: 50,
-          decoration: buttonFormDecorationsOne(),
-          child: text22WhiteButtons(text: text),
-        ),
+    onTap: () {
+      print("hello");
+    },
+    child: Center(
+      child: Container(
+        width: 325,
+        height: 50,
+        decoration: buttonFormDecorationsOne(),
+        child: text22WhiteButtons(text: text),
       ),
+    ),
   );
 }
 
@@ -37,10 +37,7 @@ Widget appButtonTwo({
 }) {
   return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-          context!,
-          pageName
-        );
+        Navigator.pushNamed(context!, pageName);
       },
       child: Center(
         child: Container(
