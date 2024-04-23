@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mind_mate/pages/authentication/signIn.dart';
 import 'package:mind_mate/pages/authentication/signUp.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = ThemeData();
-    return MaterialApp(
+    return ProviderScope(child: MaterialApp(
       title: 'MindMate',
       theme: ThemeData(
         colorScheme: theme.colorScheme
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         "/signUp": (context) => const SignUp(),
       },
 
-    );
+    ),);
   }
 }
 

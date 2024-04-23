@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mind_mate/pages/authentication/authenticationWidget.dart';
+import 'package:mind_mate/controller/authentication/notifier/registerNotifier.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
 import 'package:mind_mate/pages/utilities/utilityWidgets.dart';
 
-class SignUp extends StatelessWidget {
+class SignUp extends ConsumerWidget {
   const SignUp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final regProvider = ref.watch(registerNotifierProvider);
+
     return Container(
       color: colorsNew.backgroundColorNew,
       child: SafeArea(
@@ -31,13 +35,17 @@ class SignUp extends StatelessWidget {
                 appTextField(
                     text: "Nome",
                     iconName: "assets/icons/user.png",
-                    hintText: "Inserisci il tuo nome"),
+                    hintText: "Inserisci il tuo nome",
+                    func: (value) => ref.read(registerNotifierProvider.notifier).onNameChange(value),
+                ),
                 const SizedBox(height: 20),
                 //email textbox
                 appTextField(
                     text: "Email",
                     iconName: "assets/icons/user.png",
-                    hintText: "Inserisci la tua email"),
+                    hintText: "Inserisci la tua email",
+                  func: (value) => ref.read(registerNotifierProvider.notifier).onEmailChange(value),
+                ),
                 const SizedBox(height: 20),
 
                 //password textbox
@@ -45,6 +53,7 @@ class SignUp extends StatelessWidget {
                     text: "Password",
                     iconName: "assets/icons/lock.png",
                     hintText: "Inserisci la tua password",
+                    func: (value) => ref.read(registerNotifierProvider.notifier).onPasswordChange(value),
                     obscureText: true),
 
                 const SizedBox(height: 20),
@@ -53,6 +62,7 @@ class SignUp extends StatelessWidget {
                     text: "Ripeti la password",
                     iconName: "assets/icons/lock.png",
                     hintText: "Reinserisci la tua password",
+                    func: (value) => ref.read(registerNotifierProvider.notifier).onRePasswordChange(value),
                     obscureText: true),
 
                 const SizedBox(height: 20),
