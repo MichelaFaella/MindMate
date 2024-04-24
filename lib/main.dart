@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
       home: Welcome(),
       routes: {
         "/signIn": (context) => const SignIn(),
-        "/signUp": (context) => const SignUp(),
+        "/signUp": (context) => SignUp(),
       },
 
     ),);

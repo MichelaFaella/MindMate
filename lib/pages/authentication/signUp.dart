@@ -1,16 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mind_mate/controller/authentication/controller/signUpController.dart';
 import 'package:mind_mate/pages/authentication/authenticationWidget.dart';
 import 'package:mind_mate/controller/authentication/notifier/registerNotifier.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
 import 'package:mind_mate/pages/utilities/utilityWidgets.dart';
 
-class SignUp extends ConsumerWidget {
-  const SignUp({super.key});
+class SignUp extends ConsumerStatefulWidget{
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<SignUp> createState() => _SignUpState();
+}
+
+class _SignUpState extends ConsumerState<SignUp>{
+  late SignUpController _controller;
+
+  @override
+  void initState(){
+    _controller = SignUpController(ref: ref);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final regProvider = ref.watch(registerNotifierProvider);
 
     return Container(
@@ -72,7 +85,7 @@ class SignUp extends ConsumerWidget {
                       text: "Devi accettare i nostri termini e condizioni."),
                 ),
                 const SizedBox(height: 80),
-                appButtonOne(text: "Registrati"),
+                appButtonOne(text: "Registrati", func: (){SignUpController(ref: ref).handleSignUp();}),
               ],
             ),
           ),
@@ -80,4 +93,5 @@ class SignUp extends ConsumerWidget {
       ),
     );
   }
+
 }

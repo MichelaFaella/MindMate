@@ -14,11 +14,9 @@ Widget appIcon({
   );
 }
 
-Widget appButtonOne({String text = ""}) {
+Widget appButtonOne({String text = "", void Function()? func}) {
   return GestureDetector(
-    onTap: () {
-      print("hello");
-    },
+    onTap: () => func!(),
     child: Center(
       child: Container(
         width: 325,
