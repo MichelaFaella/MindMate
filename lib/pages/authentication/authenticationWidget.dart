@@ -63,7 +63,7 @@ Widget appTextField(
                 child: TextField(
                   keyboardType: TextInputType.multiline,
                   decoration: insideFieldDecorations(hintText: hintText),
-                  onChanged: (value) => func!(value) ,
+                  onChanged: (value) => func!(value),
                   maxLines: 1,
                   autocorrect: false,
                   obscureText: obscureText,

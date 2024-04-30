@@ -16,26 +16,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = ThemeData();
-    return ProviderScope(child: MaterialApp(
-      title: 'MindMate',
-      theme: ThemeData(
-        colorScheme: theme.colorScheme
-            .copyWith(background: colorsNew.backgroundColorNew),
-        useMaterial3: true,
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(
-            fontFamily: 'OdinRounded', // Use your custom font here
+    return ProviderScope(
+      child: MaterialApp(
+        title: 'MindMate',
+        theme: ThemeData(
+          colorScheme: theme.colorScheme
+              .copyWith(background: colorsNew.backgroundColorNew),
+          useMaterial3: true,
+          textTheme: const TextTheme(
+            bodyMedium: TextStyle(
+              fontFamily: 'OdinRounded', // Use your custom font here
+            ),
           ),
         ),
+        home: Welcome(),
+        routes: {
+          "/signIn": (context) => const SignIn(),
+          "/signUp": (context) => SignUp(),
+        },
       ),
-
-      home: Welcome(),
-      routes: {
-        "/signIn": (context) => const SignIn(),
-        "/signUp": (context) => SignUp(),
-      },
-
-    ),);
+    );
   }
 }
 
