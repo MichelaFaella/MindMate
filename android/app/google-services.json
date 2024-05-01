@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1000646821625",
+    "project_id": "mindmate-f92b2",
+    "storage_bucket": "mindmate-f92b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000646821625:android:1410e6f6636779cd46c428",
+        "android_client_info": {
+          "package_name": "com.example.mind_mate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAirLBKUtZT2PHRD8z9BqOxWk0-sQEHO3M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

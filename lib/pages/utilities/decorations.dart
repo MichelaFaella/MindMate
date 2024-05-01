@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 
+CircularProgressIndicator loaderDecoration(){
+  return CircularProgressIndicator(
+    backgroundColor: colorsNew.yellowNew,
+    color: colorsNew.purpleNew,
+  );
+}
+
 BoxDecoration buttonDecorations() {
   return const BoxDecoration(
       color: colorsNew.yellowNew,

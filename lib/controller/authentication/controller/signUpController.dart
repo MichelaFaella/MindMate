@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mind_mate/controller/authentication/notifier/registerNotifier.dart';
+import 'package:mind_mate/pages/utilities/globalLoader/globalLoader.dart';
 import 'package:mind_mate/pages/utilities/toastMessages.dart';
 
 class SignUpController {
@@ -53,6 +54,10 @@ class SignUpController {
           " tra maiuscole e caratteri speciali");
       return;
     }
+    print("---AUTENTICAZIONE SUPERATA---");
+
+    //show the loading
+    ref.read(appLoaderProvider.notifier).setLoaderValue(true);
 
     var context = Navigator.of(ref.context);
     try {
@@ -70,7 +75,14 @@ class SignUpController {
         context.pop();
       }
     } catch (e) {
-      print("---ERRORE--- " + e.toString());
+      if(kDebugMode){
+        print("---ERRORE--- " + e.toString());
+      }
+
+
     }
+
+    //show the page
+    ref.watch(appLoaderProvider.notifier).setLoaderValue(false);
   }
 }
