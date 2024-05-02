@@ -1,14 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mind_mate/controller/authentication/signInNotifier/loginNotifier.dart';
 import 'package:mind_mate/pages/authentication/authenticationWidget.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
 import 'package:mind_mate/pages/utilities/utilityWidgets.dart';
 
-class SignIn extends StatelessWidget {
+import '../../controller/authentication/controller/signInController.dart';
+
+class SignIn extends ConsumerStatefulWidget {
   const SignIn({super.key});
 
   @override
+  ConsumerState<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends ConsumerState<SignIn> {
+  late SignInController _controller;
+
+  @override
+  void initState() {
+    _controller = SignInController(ref);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final loginProvider = ref.watch(loginNotifierProvider);
+
     return Container(
       color: colorsNew.backgroundColorNew,
       child: SafeArea(
@@ -48,7 +67,13 @@ class SignIn extends StatelessWidget {
                   child: textUnderline(text: "Password dimenticata?"),
                 ),
                 const SizedBox(height: 50),
-                appButtonOne(text: "Accedi"),
+                appButtonOne(
+                  text: "Accedi",
+                  func: (){
+                    _controller.handleSignIn();
+                  }
+                ),
+
                 const SizedBox(height: 20),
                 appButtonTwo(
                     text: "Registrati", context: context, pageName: "/signUp"),
