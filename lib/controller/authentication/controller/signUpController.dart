@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:mind_mate/controller/authentication/notifier/registerNotifier.dart';
+import 'package:mind_mate/controller/authentication/signUpNotifier/registerNotifier.dart';
 import 'package:mind_mate/pages/utilities/globalLoader/globalLoader.dart';
 import 'package:mind_mate/pages/utilities/toastMessages.dart';
 
@@ -61,11 +61,14 @@ class SignUpController {
 
     var context = Navigator.of(ref.context);
     try {
+      print("sto creando le credenziali");
       final credential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
+
       if (kDebugMode) {
-        print(credential);
+        print("credenziali $credential");
       }
+
       if (credential.user != null) {
         await credential.user?.sendEmailVerification();
         await credential.user?.updateDisplayName(name);
@@ -74,12 +77,20 @@ class SignUpController {
         toastInfo("Ti abbiamo mandato una mail per verificare la tua identità");
         context.pop();
       }
+    } on FirebaseAuthException catch (e) {
+      print(e.code);
+      if (e.code == "weak-password") {
+        print("toast di merda");
+        toastInfo("Questa password è troppo debole");
+      } else if (e.code == "email-already-in-use") {
+        toastInfo("Questa email risulta già in uso");
+      } else if (e.code == "invalid-email") {
+        toastInfo("Questa email non risulta valida");
+      }
     } catch (e) {
-      if(kDebugMode){
+      if (kDebugMode) {
         print("---ERRORE--- " + e.toString());
       }
-
-
     }
 
     //show the page

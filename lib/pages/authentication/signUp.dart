@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mind_mate/controller/authentication/controller/signUpController.dart';
 import 'package:mind_mate/pages/authentication/authenticationWidget.dart';
-import 'package:mind_mate/controller/authentication/notifier/registerNotifier.dart';
+import 'package:mind_mate/controller/authentication/signUpNotifier/registerNotifier.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/decorations.dart';
 import 'package:mind_mate/pages/utilities/globalLoader/globalLoader.dart';

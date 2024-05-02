@@ -1,4 +1,4 @@
-import 'package:mind_mate/controller/authentication/notifier/registerState.dart';
+import 'package:mind_mate/controller/authentication/signUpNotifier/registerState.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'registerNotifier.g.dart';
 
