@@ -50,6 +50,7 @@ class _SignUpState extends ConsumerState<SignUp> {
                       const SizedBox(height: 20),
                       //nome textbox
                       appTextField(
+                        controller: _controller.nameController,
                         text: "Nome",
                         iconName: "assets/icons/user.png",
                         hintText: "Inserisci il tuo nome",
@@ -60,6 +61,7 @@ class _SignUpState extends ConsumerState<SignUp> {
                       const SizedBox(height: 20),
                       //email textbox
                       appTextField(
+                        controller: _controller.emailController,
                         text: "Email",
                         iconName: "assets/icons/user.png",
                         hintText: "Inserisci la tua email",
@@ -71,6 +73,7 @@ class _SignUpState extends ConsumerState<SignUp> {
 
                       //password textbox
                       appTextField(
+                          controller: _controller.passwordController,
                           text: "Password",
                           iconName: "assets/icons/lock.png",
                           hintText: "Inserisci la tua password",
@@ -82,6 +85,7 @@ class _SignUpState extends ConsumerState<SignUp> {
                       const SizedBox(height: 20),
                       //email password
                       appTextField(
+                          controller: _controller.rePasswordController,
                           text: "Ripeti la password",
                           iconName: "assets/icons/lock.png",
                           hintText: "Reinserisci la tua password",

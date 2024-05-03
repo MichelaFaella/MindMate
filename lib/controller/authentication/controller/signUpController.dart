@@ -10,6 +10,10 @@ class SignUpController {
   late WidgetRef ref;
 
   SignUpController({required this.ref});
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController rePasswordController = TextEditingController();
 
   Future<void> handleSignUp() async {
     var state = ref.read(registerNotifierProvider);
@@ -18,6 +22,12 @@ class SignUpController {
     String email = state.email;
     String password = state.password;
     String rePassword = state.rePassword;
+
+    nameController.text = name;
+    emailController.text = email;
+    passwordController.text = password;
+    rePasswordController.text = rePassword;
+
 
     print("----This is you: $name, $email, $password, $rePassword");
 
@@ -80,7 +90,6 @@ class SignUpController {
     } on FirebaseAuthException catch (e) {
       print(e.code);
       if (e.code == "weak-password") {
-        print("toast di merda");
         toastInfo("Questa password è troppo debole");
       } else if (e.code == "email-already-in-use") {
         toastInfo("Questa email risulta già in uso");
