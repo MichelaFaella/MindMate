@@ -1,12 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mind_mate/controller/authentication/signInNotifier/loginNotifier.dart';
-import 'package:mind_mate/entity/authentication/user.dart';
+import 'package:mind_mate/global.dart';
+import 'package:mind_mate/pages/utilities/constants.dart';
 import 'package:mind_mate/pages/utilities/toastMessages.dart';
-
 import '../../../pages/utilities/globalLoader/globalLoader.dart';
+import '../../../service/entity/authentication/user.dart';
 
 class SignInController {
   WidgetRef ref;
@@ -55,14 +57,14 @@ class SignInController {
       print("sto creando le credenziali");
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
-      print("AOO $credential");
 
-      if (credential.user != null) {
+
+      if (credential.user == null) {
         toastInfo(
             "Ci scusiamo ma sembra non esserci nessun utente con queste credenziali");
       }
       if (!credential.user!.emailVerified) {
-        toastInfo("Ci scusiamo ma sembra che la tua mail non sia autenticata");
+        toastInfo("Ci scusiamo ma sembra che la tua mail sia errata");
       }
 
       var user = credential.user;
@@ -74,6 +76,8 @@ class SignInController {
 
         LoginRequestEntity loginRequestEntity =
             LoginRequestEntity(1, displayName, email, photoUrl, id, 1);
+        asyncPostAllData(loginRequestEntity);
+
         print("---User logged in---");
       }
     } on FirebaseAuthException catch (e) {
@@ -92,5 +96,28 @@ class SignInController {
     }
 
     ref.watch(appLoaderProvider.notifier).setLoaderValue(false);
+  }
+
+  void asyncPostAllData(LoginRequestEntity loginRequestEntity){
+    //we need to talk to server
+
+    //have local storage
+    try{
+      Global.storageService.init();
+      var navigator = Navigator.of(ref.context);
+      print("SIMULAZIONE----------");
+      //try to remember user info
+      Global.storageService.setString(AppConstants.STORAGE_USER_PROFILE_KEY, "123");
+      Global.storageService.setString(AppConstants.STORAGE_USER_TOKEN_KEY, "123456");
+
+      print("SIMULAZIONE----------");
+      navigator.push(MaterialPageRoute(builder: (BuildContext context)=>Container()));
+    }catch(e){
+      if(kDebugMode){
+        print(e.toString());
+      }
+    }
+
+    //redirect to new page
   }
 }

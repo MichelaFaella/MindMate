@@ -6,12 +6,10 @@ import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/welcome/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'global.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  Global.init();
   runApp(const MyApp());
 }
 
