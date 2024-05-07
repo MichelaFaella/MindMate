@@ -64,7 +64,7 @@ class SignUpController {
           " tra maiuscole e caratteri speciali");
       return;
     }
-    print("---AUTENTICAZIONE SUPERATA---");
+    print("---REGISTRAZIONE SUPERATA---");
 
     //show the loading
     ref.read(appLoaderProvider.notifier).setLoaderValue(true);

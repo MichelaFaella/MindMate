@@ -40,7 +40,6 @@ Widget nextButton(
     int index, PageController controller, String text, BuildContext context) {
   return GestureDetector(
     onTap: () {
-      print("My index is $index");
       if (index < 3) {
         controller.animateToPage(
           index,

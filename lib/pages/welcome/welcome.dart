@@ -28,7 +28,6 @@ class _WelcomeState extends State<Welcome> {
             //showing the three welcome pages
             PageView(
               onPageChanged: (value) {
-                print("My value is $value");
                 setState(() {
                   _dotsIndex = value;
                 });
