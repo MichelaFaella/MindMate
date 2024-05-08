@@ -58,7 +58,6 @@ class SignInController {
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
 
-
       if (credential.user == null) {
         toastInfo(
             "Ci scusiamo ma sembra non esserci nessun utente con queste credenziali");
@@ -98,22 +97,25 @@ class SignInController {
     ref.watch(appLoaderProvider.notifier).setLoaderValue(false);
   }
 
-  void asyncPostAllData(LoginRequestEntity loginRequestEntity){
+  void asyncPostAllData(LoginRequestEntity loginRequestEntity) {
     //we need to talk to server
 
     //have local storage
-    try{
+    try {
       Global.storageService.init();
       var navigator = Navigator.of(ref.context);
       print("SIMULAZIONE----------");
       //try to remember user info
-      Global.storageService.setString(AppConstants.STORAGE_USER_PROFILE_KEY, "123");
-      Global.storageService.setString(AppConstants.STORAGE_USER_TOKEN_KEY, "123456");
+      Global.storageService
+          .setString(AppConstants.STORAGE_USER_PROFILE_KEY, "123");
+      Global.storageService
+          .setString(AppConstants.STORAGE_USER_TOKEN_KEY, "123456");
 
       print("SIMULAZIONE----------");
-      navigator.push(MaterialPageRoute(builder: (BuildContext context)=>Container()));
-    }catch(e){
-      if(kDebugMode){
+      navigator.push(
+          MaterialPageRoute(builder: (BuildContext context) => Container()));
+    } catch (e) {
+      if (kDebugMode) {
         print(e.toString());
       }
     }

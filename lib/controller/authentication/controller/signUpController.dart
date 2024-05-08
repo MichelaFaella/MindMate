@@ -28,7 +28,6 @@ class SignUpController {
     passwordController.text = password;
     rePasswordController.text = rePassword;
 
-
     print("----This is you: $name, $email, $password, $rePassword");
 
     RegExp nameReg = RegExp(r"^[A-Za-z]+$");

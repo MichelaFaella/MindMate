@@ -4,7 +4,7 @@ import 'package:mind_mate/service/storage.dart';
 
 import 'firebase_options.dart';
 
-class Global{
+class Global {
   static late StorageService storageService;
 
   static Future init() async {
@@ -14,5 +14,4 @@ class Global{
     );
     storageService = await StorageService().init();
   }
-
 }
