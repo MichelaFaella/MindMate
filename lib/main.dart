@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mind_mate/controller/utilities/routes/routes.dart';
+import 'package:mind_mate/pages/application/application.dart';
 import 'package:mind_mate/pages/authentication/signIn.dart';
 import 'package:mind_mate/pages/authentication/signUp.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
@@ -9,7 +11,7 @@ import 'firebase_options.dart';
 import 'global.dart';
 
 void main() async {
-  Global.init();
+  await Global.init();
   runApp(const MyApp());
 }
 
@@ -33,11 +35,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: Welcome(),
-        routes: {
-          "/signIn": (context) => const SignIn(),
-          "/signUp": (context) => SignUp(),
-        },
+        onGenerateRoute: AppPages.generateRouteSettings,
       ),
     );
   }

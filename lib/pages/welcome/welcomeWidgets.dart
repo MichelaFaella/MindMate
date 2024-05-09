@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mind_mate/controller/utilities/constants.dart';
 import 'package:mind_mate/pages/utilities/decorations.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
+
+import '../../global.dart';
 
 Widget appOnBoardingPage(PageController controller, BuildContext context,
     {String imagePath = "",
@@ -31,12 +34,12 @@ Widget appOnBoardingPage(PageController controller, BuildContext context,
                   child: text20Normal(text: subTitle))
             ],
           )),
-      nextButton(index, controller, buttonText, context),
+      _nextButton(index, controller, buttonText, context),
     ],
   );
 }
 
-Widget nextButton(
+Widget _nextButton(
     int index, PageController controller, String text, BuildContext context) {
   return GestureDetector(
     onTap: () {
@@ -47,6 +50,9 @@ Widget nextButton(
           curve: Curves.linear,
         );
       } else {
+        //if we are using this app for the first time or not
+        Global.storageService.setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_KEY, true);
+
         Navigator.pushNamed(
           context,
           "/signIn",

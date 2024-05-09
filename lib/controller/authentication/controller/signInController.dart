@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mind_mate/controller/authentication/signInNotifier/loginNotifier.dart';
 import 'package:mind_mate/global.dart';
-import 'package:mind_mate/pages/utilities/constants.dart';
+import 'package:mind_mate/controller/utilities/constants.dart';
 import 'package:mind_mate/pages/utilities/toastMessages.dart';
+import '../../../pages/application/application.dart';
 import '../../../pages/utilities/globalLoader/globalLoader.dart';
 import '../../../service/entity/authentication/user.dart';
 
@@ -111,9 +112,7 @@ class SignInController {
       Global.storageService
           .setString(AppConstants.STORAGE_USER_TOKEN_KEY, "123456");
 
-      print("SIMULAZIONE----------");
-      navigator.push(
-          MaterialPageRoute(builder: (BuildContext context) => Container()));
+      navigator.pushNamedAndRemoveUntil("/application", (route) => false);
     } catch (e) {
       if (kDebugMode) {
         print(e.toString());

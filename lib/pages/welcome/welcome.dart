@@ -49,7 +49,7 @@ class _WelcomeState extends State<Welcome> {
                     imagePath: "assets/images/run.png",
                     title: "UNA VASTA SCELTA DI FUNZIONALITA'!",
                     subTitle:
-                        "Studiando con me potrai prendere appunti, segnare gli "
+                        "Studiando con me potrai acquistare corsi, segnare gli "
                         "obiettivi giorno per giorno e tanto altro ancora!",
                     index: 2,
                     buttonText: "Avanti"),
