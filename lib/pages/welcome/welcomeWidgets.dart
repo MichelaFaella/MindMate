@@ -51,7 +51,8 @@ Widget _nextButton(
         );
       } else {
         //if we are using this app for the first time or not
-        Global.storageService.setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_KEY, true);
+        Global.storageService
+            .setBool(AppConstants.STORAGE_DEVICE_OPEN_FIRST_KEY, true);
 
         Navigator.pushNamed(
           context,
