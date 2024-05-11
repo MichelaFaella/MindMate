@@ -8,6 +8,7 @@ import 'package:mind_mate/pages/utilities/decorations.dart';
 import 'package:mind_mate/pages/utilities/globalLoader/globalLoader.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
 import 'package:mind_mate/pages/utilities/utilityWidgets.dart';
+import 'package:size_config/size_config.dart';
 
 class SignUp extends ConsumerStatefulWidget {
   @override
@@ -43,11 +44,11 @@ class _SignUpState extends ConsumerState<SignUp> {
                       Center(
                         child: appIcon(
                             imagePath: "assets/images/Logo3.png",
-                            width: 180,
-                            height: 180),
+                            width: 180.w,
+                            height: 180.h),
                       ),
                       text14Description(text: "Inserisci i tuoi dati qui"),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       //nome textbox
                       appTextField(
                         controller: _controller.nameController,
@@ -58,7 +59,7 @@ class _SignUpState extends ConsumerState<SignUp> {
                             .read(registerNotifierProvider.notifier)
                             .onNameChange(value),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       //email textbox
                       appTextField(
                         controller: _controller.emailController,
@@ -69,7 +70,7 @@ class _SignUpState extends ConsumerState<SignUp> {
                             .read(registerNotifierProvider.notifier)
                             .onEmailChange(value),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
 
                       //password textbox
                       appTextField(
@@ -82,7 +83,7 @@ class _SignUpState extends ConsumerState<SignUp> {
                               .onPasswordChange(value),
                           obscureText: true),
 
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       //email password
                       appTextField(
                           controller: _controller.rePasswordController,
@@ -94,14 +95,14 @@ class _SignUpState extends ConsumerState<SignUp> {
                               .onRePasswordChange(value),
                           obscureText: true),
 
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       Container(
                         margin: const EdgeInsets.only(left: 25),
                         child: text15Normal(
                             text:
                                 "Registrandoti accetterai i nostri termini e condizioni."),
                       ),
-                      const SizedBox(height: 80),
+                      SizedBox(height: 80.h),
                       appButtonOne(
                           text: "Registrati",
                           func: () {

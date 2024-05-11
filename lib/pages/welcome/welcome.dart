@@ -47,10 +47,9 @@ class _WelcomeState extends State<Welcome> {
                 //second page
                 appOnBoardingPage(_controller, context,
                     imagePath: "assets/images/run.png",
-                    title: "UNA VASTA SCELTA DI FUNZIONALITA'!",
+                    title: "LE NOSTRE FUNZIONALITA'!",
                     subTitle:
-                        "Studiando con me potrai acquistare corsi, segnare gli "
-                        "obiettivi giorno per giorno e tanto altro ancora!",
+                        "Acquista i miei corsi e otterrai subito risultati",
                     index: 2,
                     buttonText: "Avanti"),
                 //third page

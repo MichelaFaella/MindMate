@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
-import 'package:mind_mate/pages/authentication/authenticationWidget.dart';
+import '../utilities/decorations.dart';
 
 class Application extends StatefulWidget {
   const Application({Key? key}) : super(key: key);

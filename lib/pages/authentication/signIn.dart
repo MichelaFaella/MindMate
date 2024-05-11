@@ -6,6 +6,7 @@ import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/globalLoader/globalLoader.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
 import 'package:mind_mate/pages/utilities/utilityWidgets.dart';
+import 'package:size_config/size_config.dart';
 
 import '../../controller/authentication/controller/signInController.dart';
 import '../utilities/decorations.dart';
@@ -51,7 +52,7 @@ class _SignInState extends ConsumerState<SignIn> {
                       socialLogIn(),
                       text14Description(
                           text: "O usa la tua mail per effettuare l'accesso"),
-                      const SizedBox(height: 50),
+                      SizedBox(height: 50.h),
                       //email textbox
                       appTextField(
                         controller: _controller.emailController,
@@ -62,7 +63,7 @@ class _SignInState extends ConsumerState<SignIn> {
                             .read(loginNotifierProvider.notifier)
                             .onEmailChange(value),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       //password textbox
                       appTextField(
                         controller: _controller.passwordController,
@@ -74,20 +75,20 @@ class _SignInState extends ConsumerState<SignIn> {
                             .read(loginNotifierProvider.notifier)
                             .onPasswordChange(value),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       //forgot text
                       Container(
-                        margin: const EdgeInsets.only(left: 25),
+                        margin: EdgeInsets.only(left: 25.w),
                         child: textUnderline(text: "Password dimenticata?"),
                       ),
-                      const SizedBox(height: 50),
+                      SizedBox(height: 50.h),
                       appButtonOne(
                           text: "Accedi",
                           func: () {
                             _controller.handleSignIn();
                           }),
 
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20.h),
                       appButtonTwo(
                           text: "Registrati",
                           context: context,

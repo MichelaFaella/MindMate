@@ -1,11 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
+import 'package:mind_mate/pages/utilities/textWidgets.dart';
+
+AppBar buildAppBar({String title = ""}) {
+  return AppBar(
+    title: text16Normal(text: title),
+    centerTitle: true,
+  );
+}
 
 CircularProgressIndicator loaderDecoration() {
   return CircularProgressIndicator(
     backgroundColor: colorsNew.yellowNew,
     color: colorsNew.purpleNew,
   );
+}
+
+BoxDecoration circularButtonDecorations() {
+  return const BoxDecoration(
+      borderRadius: BorderRadius.all(
+        Radius.circular(20),
+      ),
+      boxShadow: [
+        BoxShadow(
+            color: colorsNew.shadowNew,
+            spreadRadius: 3,
+            blurRadius: 10,
+            offset: Offset(0, 6))
+      ]);
 }
 
 BoxDecoration buttonDecorations() {

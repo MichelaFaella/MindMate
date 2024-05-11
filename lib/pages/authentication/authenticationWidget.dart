@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mind_mate/pages/utilities/decorations.dart';
 import 'package:mind_mate/pages/utilities/utilityWidgets.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
-
-AppBar buildAppBar({String title = ""}) {
-  return AppBar(
-    title: text16Normal(text: title),
-    centerTitle: true,
-  );
-}
+import 'package:size_config/size_config.dart';
 
 Widget socialLogIn() {
   return Container(
@@ -29,8 +23,8 @@ Widget _loginButton({
 }) {
   return GestureDetector(
     child: Container(
-      decoration: buttonDecorations(),
-      child: appIcon(imagePath: imagePath, width: 40, height: 40),
+      decoration: circularButtonDecorations(),
+      child: appIcon(imagePath: imagePath, width: 40.w, height: 40.w),
     ),
   );
 }
@@ -43,23 +37,23 @@ Widget appTextField(
     bool obscureText = false,
     void Function(String)? func}) {
   return Container(
-    padding: const EdgeInsets.symmetric(horizontal: 40),
+    padding: EdgeInsets.symmetric(horizontal: 40.w),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         text15Normal(text: text),
         Container(
-          width: 325,
+          width: 325.w,
           height: 50,
           decoration: fieldDecorations(),
           child: Row(
             children: [
               Container(
-                margin: const EdgeInsets.symmetric(horizontal: 10),
-                child: appIcon(imagePath: iconName, width: 16, height: 16),
+                margin: EdgeInsets.symmetric(horizontal: 10.w),
+                child: appIcon(imagePath: iconName, width: 16.w, height: 16.h),
               ),
               Container(
-                width: 280,
+                width: 200,
                 height: 50,
                 child: TextField(
                   controller: controller,
