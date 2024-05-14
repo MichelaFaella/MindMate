@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mind_mate/pages/utilities/colorsNew.dart';
 import 'package:mind_mate/pages/utilities/textWidgets.dart';
+import 'package:size_config/size_config.dart';
 
 AppBar buildAppBar({String title = ""}) {
   return AppBar(
@@ -81,6 +82,20 @@ BoxDecoration cardDecorations() {
       borderRadius: BorderRadius.all(
         Radius.circular(20),
       ),
+      boxShadow: [
+        BoxShadow(
+            color: colorsNew.shadowNew,
+            spreadRadius: 5,
+            blurRadius: 10,
+            offset: Offset(0, 6))
+      ]);
+}
+
+BoxDecoration barDecorations() {
+  return BoxDecoration(
+      color: colorsNew.cardColorNew,
+      borderRadius: BorderRadius.only(
+          topRight: Radius.circular(20.h), topLeft: Radius.circular(20.h)),
       boxShadow: [
         BoxShadow(
             color: colorsNew.shadowNew,

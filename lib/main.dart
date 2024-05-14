@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     final ThemeData theme = ThemeData();
     return SizeConfigInit(
       referenceHeight: 1000,
-      referenceWidth: 300,
+      referenceWidth: 400,
       builder: (BuildContext context, Orientation orientation) {
         return ProviderScope(
           child: MaterialApp(
